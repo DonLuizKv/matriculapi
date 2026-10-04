@@ -1,0 +1,11 @@
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\parcial.exe
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\appsettings.Development.json
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\appsettings.json
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\parcial.dll
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\parcial.deps.json
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\parcial.runtimeconfig.json
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\parcial.pdb
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\Microsoft.OpenApi.dll
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\LuizK\AppData\Local\Temp\opencode\matriculas-verify\Swashbuckle.AspNetCore.SwaggerUI.dll

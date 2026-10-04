@@ -1,0 +1,132 @@
+@parcial_HostAddress = http://localhost:5299
+
+### 1. Listar asignaturas activas (200 - 101, 102, 103)
+GET {{parcial_HostAddress}}/api/asignaturas
+Accept: application/json
+
+###
+
+### 2. Crear asignatura (201 - Id generado por el servidor)
+POST {{parcial_HostAddress}}/api/asignaturas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "nombre": "Redes de Computadores",
+  "codigo": "SIS-104",
+  "creditos": 3,
+  "activa": true
+}
+
+###
+
+### 3. Matricular estudiante 1 en asignatura 101 (201)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 1,
+  "asignaturaId": 101,
+  "anio": 2026,
+  "periodo": "2026-1"
+}
+
+###
+
+### 4. Repetir la misma matricula (400 - duplicado en el mismo añio y periodo)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 1,
+  "asignaturaId": 101,
+  "anio": 2026,
+  "periodo": "2026-1"
+}
+
+###
+
+### 5. Matricular la misma asignatura en otro periodo (201)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 1,
+  "asignaturaId": 101,
+  "anio": 2026,
+  "periodo": "2026-2"
+}
+
+###
+
+### 6. Estudiante inexistente (404)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 99,
+  "asignaturaId": 101,
+  "anio": 2026,
+  "periodo": "2026-1"
+}
+
+###
+
+### 7. Asignatura inexistente (404)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 1,
+  "asignaturaId": 999,
+  "anio": 2026,
+  "periodo": "2026-1"
+}
+
+###
+
+### 8. Eliminar asignatura 103 sin matriculas (204 - borrado fisico)
+DELETE {{parcial_HostAddress}}/api/asignaturas/103
+
+###
+
+### 9. Eliminar asignatura 101 con matriculas (204 - borrado logico, Activa = false)
+DELETE {{parcial_HostAddress}}/api/asignaturas/101
+
+###
+
+### 10. Matricular en asignatura inactiva (400)
+POST {{parcial_HostAddress}}/api/matriculas
+Content-Type: application/json
+
+{
+  "id": 0,
+  "estudianteId": 2,
+  "asignaturaId": 101,
+  "anio": 2026,
+  "periodo": "2026-1"
+}
+
+###
+
+### 11. Historial del estudiante 1 (200 - incluye la 101 inactiva)
+GET {{parcial_HostAddress}}/api/estudiantes/1/asignaturas
+Accept: application/json
+
+###
+
+### 12. Historial de estudiante inexistente (404)
+GET {{parcial_HostAddress}}/api/estudiantes/99/asignaturas
+Accept: application/json
+
+###
+
+### 13. Eliminar asignatura inexistente (404)
+DELETE {{parcial_HostAddress}}/api/asignaturas/999
+
+###

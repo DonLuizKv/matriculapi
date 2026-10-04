@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>parcial</name>
+    </assembly>
+    <members>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="T:Estudiante">
+            <summary>Estudiante registrado en la institución.</summary>
+            <param name="Id">Identificador único del estudiante.</param>
+            <param name="Nombre">Nombre completo.</param>
+            <param name="Carrera">Programa académico al que pertenece.</param>
+        </member>
+        <member name="M:Estudiante.#ctor(System.Int32,System.String,System.String)">
+            <summary>Estudiante registrado en la institución.</summary>
+            <param name="Id">Identificador único del estudiante.</param>
+            <param name="Nombre">Nombre completo.</param>
+            <param name="Carrera">Programa académico al que pertenece.</param>
+        </member>
+        <member name="P:Estudiante.Id">
+            <summary>Identificador único del estudiante.</summary>
+        </member>
+        <member name="P:Estudiante.Nombre">
+            <summary>Nombre completo.</summary>
+        </member>
+        <member name="P:Estudiante.Carrera">
+            <summary>Programa académico al que pertenece.</summary>
+        </member>
+        <member name="T:Asignatura">
+            <summary>Asignatura ofrecida. Soporta borrado lógico mediante <c>Activa</c>.</summary>
+            <param name="Id">Lo asigna el servidor; se ignora el enviado en el cuerpo.</param>
+            <param name="Nombre">Nombre de la asignatura.</param>
+            <param name="Codigo">Código único (ej.: SIS-104).</param>
+            <param name="Creditos">Número de créditos (mayor que cero).</param>
+            <param name="Activa">false = inactiva (borrado lógico). Siempre es true al crear.</param>
+        </member>
+        <member name="M:Asignatura.#ctor(System.Int32,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>Asignatura ofrecida. Soporta borrado lógico mediante <c>Activa</c>.</summary>
+            <param name="Id">Lo asigna el servidor; se ignora el enviado en el cuerpo.</param>
+            <param name="Nombre">Nombre de la asignatura.</param>
+            <param name="Codigo">Código único (ej.: SIS-104).</param>
+            <param name="Creditos">Número de créditos (mayor que cero).</param>
+            <param name="Activa">false = inactiva (borrado lógico). Siempre es true al crear.</param>
+        </member>
+        <member name="P:Asignatura.Id">
+            <summary>Lo asigna el servidor; se ignora el enviado en el cuerpo.</summary>
+        </member>
+        <member name="P:Asignatura.Nombre">
+            <summary>Nombre de la asignatura.</summary>
+        </member>
+        <member name="P:Asignatura.Codigo">
+            <summary>Código único (ej.: SIS-104).</summary>
+        </member>
+        <member name="P:Asignatura.Creditos">
+            <summary>Número de créditos (mayor que cero).</summary>
+        </member>
+        <member name="P:Asignatura.Activa">
+            <summary>false = inactiva (borrado lógico). Siempre es true al crear.</summary>
+        </member>
+        <member name="T:Matricula">
+            <summary>Entidad intermedia de la relación N:M Estudiante–Asignatura.</summary>
+            <param name="Id">Lo asigna el servidor.</param>
+            <param name="EstudianteId">Id del estudiante (debe existir).</param>
+            <param name="AsignaturaId">Id de la asignatura (debe existir y estar activa).</param>
+            <param name="Anio">Año académico (ej.: 2026).</param>
+            <param name="Periodo">Período lectivo; debe empezar por el año (ej.: 2026-1).</param>
+        </member>
+        <member name="M:Matricula.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>Entidad intermedia de la relación N:M Estudiante–Asignatura.</summary>
+            <param name="Id">Lo asigna el servidor.</param>
+            <param name="EstudianteId">Id del estudiante (debe existir).</param>
+            <param name="AsignaturaId">Id de la asignatura (debe existir y estar activa).</param>
+            <param name="Anio">Año académico (ej.: 2026).</param>
+            <param name="Periodo">Período lectivo; debe empezar por el año (ej.: 2026-1).</param>
+        </member>
+        <member name="P:Matricula.Id">
+            <summary>Lo asigna el servidor.</summary>
+        </member>
+        <member name="P:Matricula.EstudianteId">
+            <summary>Id del estudiante (debe existir).</summary>
+        </member>
+        <member name="P:Matricula.AsignaturaId">
+            <summary>Id de la asignatura (debe existir y estar activa).</summary>
+        </member>
+        <member name="P:Matricula.Anio">
+            <summary>Año académico (ej.: 2026).</summary>
+        </member>
+        <member name="P:Matricula.Periodo">
+            <summary>Período lectivo; debe empezar por el año (ej.: 2026-1).</summary>
+        </member>
+        <member name="T:AsignaturaMatriculada">
+            <summary>Asignatura dentro del historial académico de un estudiante.</summary>
+            <param name="AsignaturaId">Id de la asignatura.</param>
+            <param name="Nombre">Nombre de la asignatura.</param>
+            <param name="Codigo">Código de la asignatura.</param>
+            <param name="Creditos">Número de créditos.</param>
+            <param name="Activa">false si la asignatura fue inactivada (borrado lógico).</param>
+            <param name="Anio">Año en que se matriculó.</param>
+            <param name="Periodo">Período en que se matriculó (ej.: 2026-1).</param>
+        </member>
+        <member name="M:AsignaturaMatriculada.#ctor(System.Int32,System.String,System.String,System.Int32,System.Boolean,System.Int32,System.String)">
+            <summary>Asignatura dentro del historial académico de un estudiante.</summary>
+            <param name="AsignaturaId">Id de la asignatura.</param>
+            <param name="Nombre">Nombre de la asignatura.</param>
+            <param name="Codigo">Código de la asignatura.</param>
+            <param name="Creditos">Número de créditos.</param>
+            <param name="Activa">false si la asignatura fue inactivada (borrado lógico).</param>
+            <param name="Anio">Año en que se matriculó.</param>
+            <param name="Periodo">Período en que se matriculó (ej.: 2026-1).</param>
+        </member>
+        <member name="P:AsignaturaMatriculada.AsignaturaId">
+            <summary>Id de la asignatura.</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Nombre">
+            <summary>Nombre de la asignatura.</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Codigo">
+            <summary>Código de la asignatura.</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Creditos">
+            <summary>Número de créditos.</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Activa">
+            <summary>false si la asignatura fue inactivada (borrado lógico).</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Anio">
+            <summary>Año en que se matriculó.</summary>
+        </member>
+        <member name="P:AsignaturaMatriculada.Periodo">
+            <summary>Período en que se matriculó (ej.: 2026-1).</summary>
+        </member>
+        <member name="T:ErrorResponse">
+            <summary>Cuerpo estándar de las respuestas de error.</summary>
+            <param name="Error">Mensaje que explica el motivo del error.</param>
+        </member>
+        <member name="M:ErrorResponse.#ctor(System.String)">
+            <summary>Cuerpo estándar de las respuestas de error.</summary>
+            <param name="Error">Mensaje que explica el motivo del error.</param>
+        </member>
+        <member name="P:ErrorResponse.Error">
+            <summary>Mensaje que explica el motivo del error.</summary>
+        </member>
+    </members>
+</doc>
